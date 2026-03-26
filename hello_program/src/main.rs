@@ -57,7 +57,6 @@ fn add(num1: u8, num2: u8) -> u8 {
 
 // ---------------------------- Scope --------------------------------- //
 
-/*
 fn main() {
     let outer_variable: u8 = 23;
     // Outer Variable
@@ -71,18 +70,5 @@ fn main() {
     // println!("Inner Variable: {}", inner_varibale); // Can't use inner_variable beacuse of scope validation.
     println!("Outer Varibale: {}", outer_variable);
 }
-*/
 
-// ---------------------------- Ownership --------------------------------- //
 
-// -> Reverse OwnerShip.
-fn main() {
-    let s1: String = String::from("Hello");
-    let (s2, len) = calculate_length(s1);
-    println!("The length of {} is {}", s2, len);
-}
-
-fn calculate_length(s: String) -> (String, usize) {
-    let length: usize = s.len();
-    return (s, length);
-}
