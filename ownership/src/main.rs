@@ -88,3 +88,15 @@ fn main() {
 fn calculate_length(s: &String) -> usize {
     return s.len();
 }
+
+// -------------------------- Dangling Reference -------------------------- //
+/*fn main() {
+    let reference_to_nothing = create_string_reference();
+}
+
+fn create_string_reference() -> &String {
+    let s: String = String::from("Hello");
+    return &s;
+}*/
+
+// It helps you misuse of reference and unnessecery reference sharing.
