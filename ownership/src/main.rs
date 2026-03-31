@@ -23,7 +23,6 @@ fn calculate_length(s:String)->usize {
     return length;
 }*/
 
-
 // -> Using Reference or Borrow operation
 /*
 fn main() {
@@ -35,7 +34,6 @@ fn calculate_length(s:&String)->usize {
     let length:usize = s.len();
     return length;
 }*/
-
 
 // --------------------------Borrow-------------------------- //
 
@@ -49,11 +47,10 @@ fn append_string(s:&mut String) {
     s.push_str("World!");
 }*/
 
-
 // --------------------------Reference Rule-------------------------- //
 
-fn main() {
-    let mut s1:String = String::from("Hello");
+/*fn main() {
+    let mut s1: String = String::from("Hello");
     let w1 = &mut s1;
     w1.push_str(" World");
     println!("W1: {}", w1);
@@ -61,5 +58,33 @@ fn main() {
     let w2 = &mut s1;
     w2.push_str(" Code");
     println!("W2: {}", w2);
+} */
+
+// -------------------------- Referencing and Deferencing -------------------------- //
+
+/* fn main() {
+    let x: u8 = 45;
+    println!("Address of X = {:p}", &x);
+    println!("Value of X = {}", x);
+    let y = &x;
+    println!("Address of Y = {:p}", y);
+    println!("Value of Y = {}", y); // Auto Dereferncing.
+} */
+
+/*fn main() {
+    let mut x: u8 = 5;
+    x += 1; // 6
+    let y = &mut x;
+    *y += 1; // 7
+    println!("X: {}", y);
+}*/
+
+fn main() {
+    let name: String = String::from("Soubhagya Nayak");
+    let len: usize = calculate_length(&name);
+    print!("Length of {} is {}", name, len);
 }
 
+fn calculate_length(s: &String) -> usize {
+    return s.len();
+}
